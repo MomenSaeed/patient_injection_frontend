@@ -4,6 +4,7 @@ import Base from '../../components/Base'
 import Header from '../../components/Header'
 import PatientData from '../../components/PatientData'
 import { PatientContext } from '../../context/Patient'
+import Adherence from './Adherence'
 import InjectionsList from './InjectionsList'
 
 const Home: React.FC = () => {
@@ -13,8 +14,9 @@ const Home: React.FC = () => {
       <Header title="Home Page">
         {currentPatient && <PatientData patient={currentPatient} />}
       </Header>
-      <Container maxWidth="sm" sx={{ mt: 3 }}>
+      <Container maxWidth="md" sx={{ mt: 3 }}>
         <InjectionsList />
+        <Adherence />
       </Container>
     </Base>
   )

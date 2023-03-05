@@ -45,7 +45,7 @@ const InjectionsList: React.FC = () => {
             <Typography>dose</Typography>
             {injections &&
               injections.map((injection) => (
-                <Typography>{injection.dose}</Typography>
+                <Typography key={injection.id}>{injection.dose}</Typography>
               ))}
           </Box>
           <Box
@@ -58,7 +58,7 @@ const InjectionsList: React.FC = () => {
             <Typography>drugName</Typography>
             {injections &&
               injections.map((injection) => (
-                <Typography>{injection.drugName}</Typography>
+                <Typography key={injection.id}>{injection.drugName}</Typography>
               ))}
           </Box>
           <Box
@@ -71,7 +71,9 @@ const InjectionsList: React.FC = () => {
             <Typography>lotNumber</Typography>
             {injections &&
               injections.map((injection) => (
-                <Typography>{injection.lotNumber}</Typography>
+                <Typography key={injection.id}>
+                  {injection.lotNumber}
+                </Typography>
               ))}
           </Box>
           <Box
@@ -84,7 +86,7 @@ const InjectionsList: React.FC = () => {
             <Typography>Time</Typography>
             {injections &&
               injections.map((injection) => (
-                <Typography>
+                <Typography key={injection.id}>
                   {new Date(
                     Date.parse(injection.createdAt)
                   ).toLocaleDateString()}

@@ -1,5 +1,5 @@
 export interface InjectionGraph {
-  date: Date
+  date: string
   day: number
   month: string
   year: number
