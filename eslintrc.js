@@ -33,7 +33,6 @@ module.exports = {
           ['@apps', './src/apps'],
           ['@components', './src/components'],
           ['@core', './src/core'],
-          ['@config', './src/config'],
         ],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },

@@ -18,9 +18,9 @@ export const setupGraphqlClient = (): void => {
   const patientApiKey = JSON.parse(
     window.localStorage.getItem('patientApiKey') as string
   )
-  setClientToken(patientApiKey)
+  setClientApiKey(patientApiKey)
 }
 
-export const setClientToken = (patientApiKey: string): void => {
-  graphqlRequestClient.setHeader('patientApiToken', patientApiKey)
+export const setClientApiKey = (patientApiKey: string): void => {
+  graphqlRequestClient.setHeader('Patient-Api-Key', patientApiKey)
 }
