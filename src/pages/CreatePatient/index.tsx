@@ -2,7 +2,7 @@ import { Button, Link as MuiLink, TextField } from '@mui/material'
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { createPatientMutation } from '../../api/patients/createPatient'
-import AuthContainer from '../../components/AuthContainer'
+import InputContainer from '../../components/InputContainer'
 import { PatientContext } from '../../context/Patient'
 
 const CreatePatient: React.FC = () => {
@@ -20,7 +20,7 @@ const CreatePatient: React.FC = () => {
   })
 
   return (
-    <AuthContainer>
+    <InputContainer>
       <TextField
         id="create-patient-input-id"
         label="Patient Name"
@@ -43,7 +43,7 @@ const CreatePatient: React.FC = () => {
           Login Page
         </MuiLink>
       </Link>
-    </AuthContainer>
+    </InputContainer>
   )
 }
 

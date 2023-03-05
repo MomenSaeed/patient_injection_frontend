@@ -1,14 +1,14 @@
 import { Button, Link as MuiLink, TextField } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import AuthContainer from '../../components/AuthContainer'
+import InputContainer from '../../components/InputContainer'
 import { PatientContext } from '../../context/Patient'
 
 const Login: React.FC = () => {
   const { setPatientApiKey } = React.useContext(PatientContext)
   const [input, setInput] = React.useState<string | null>(null)
   return (
-    <AuthContainer>
+    <InputContainer>
       <TextField
         id="login-input-id"
         label="Patient Api Key"
@@ -31,7 +31,7 @@ const Login: React.FC = () => {
           Create New Patient
         </MuiLink>
       </Link>
-    </AuthContainer>
+    </InputContainer>
   )
 }
 

@@ -1,11 +1,11 @@
 import { Box, Container } from '@mui/material'
 import React from 'react'
 
-interface AuthContainerProps {
+interface InputContainerProps {
   children?: React.ReactNode
 }
 
-const AuthContainer: React.FC<AuthContainerProps> = ({ children }) => {
+const InputContainer: React.FC<InputContainerProps> = ({ children }) => {
   return (
     <Container sx={{ bgcolor: '#FFE4E1', my: 10, height: 300 }} maxWidth="sm">
       <Box
@@ -24,4 +24,4 @@ const AuthContainer: React.FC<AuthContainerProps> = ({ children }) => {
   )
 }
 
-export default AuthContainer
+export default InputContainer
