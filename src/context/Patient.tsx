@@ -1,7 +1,10 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { queryCurrentPatient } from '../api/patient/currentPatient'
-import { Patient } from '../api/patient/types'
+import {
+  CurrentPatientResult,
+  queryCurrentPatient,
+} from '../api/patients/currentPatient'
+import { Patient } from '../api/patients/types'
 import { setClientApiKey } from '../core/requestClient'
 import { useLocalStorage } from '../utils/useLocalStorage'
 
@@ -10,7 +13,7 @@ export interface PatientContextType {
   setCurrentPatient: React.Dispatch<React.SetStateAction<Patient | null>>
   patientApiKey: string | null
   setPatientApiKey: React.Dispatch<React.SetStateAction<string | null>>
-  refetch: () => void
+  refetchPatient: () => void
   logout: () => void
   isLoading?: boolean
 }
@@ -41,8 +44,11 @@ export const PatientProvider: React.FC<PatientProviderProps> = ({
   }, [navigate, setPatientApiKey])
 
   const { data, isLoading, refetch } = queryCurrentPatient({
-    enabled: false,
     onError: logout,
+    onSuccess: (response: CurrentPatientResult) => {
+      setCurrentPatient(response.currentPatient)
+      navigate('/')
+    },
   })
 
   React.useEffect(() => {
@@ -55,18 +61,12 @@ export const PatientProvider: React.FC<PatientProviderProps> = ({
     setCurrentPatient(data?.currentPatient || null)
   }, [data])
 
-  React.useEffect(() => {
-    if (currentPatient) {
-      setPatientApiKey(currentPatient.apiKey)
-    }
-  }, [currentPatient, setPatientApiKey])
-
   const value = {
     currentPatient,
     setCurrentPatient,
     patientApiKey,
     setPatientApiKey,
-    refetch,
+    refetchPatient: refetch,
     logout,
     isLoading,
   }

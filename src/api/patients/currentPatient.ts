@@ -17,6 +17,7 @@ export const query = `
       id
       apiKey
       fullName
+      createdAt
     }
   }
 `

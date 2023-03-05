@@ -1,10 +1,22 @@
+import { Container } from '@mui/system'
 import React from 'react'
+import Base from '../../components/Base'
+import Header from '../../components/Header'
+import PatientData from '../../components/PatientData'
+import { PatientContext } from '../../context/Patient'
+import InjectionsList from './InjectionsList'
 
 const Home: React.FC = () => {
+  const { currentPatient } = React.useContext(PatientContext)
   return (
-    <div>
-      <h1>This is the home page</h1>
-    </div>
+    <Base>
+      <Header title="Home Page">
+        {currentPatient && <PatientData patient={currentPatient} />}
+      </Header>
+      <Container maxWidth="sm" sx={{ mt: 3 }}>
+        <InjectionsList />
+      </Container>
+    </Base>
   )
 }
 
