@@ -1,9 +1,11 @@
 import { Box, Button, Typography } from '@mui/material'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { queryInjectionsList } from '../../api/injections/list'
 import LoadMore from '../../components/LoadMore'
 
 const InjectionsList: React.FC = () => {
+  const navigate = useNavigate()
   const { data, hasNextPage, fetchNextPage } = queryInjectionsList()
 
   const injections = data?.pages
@@ -25,7 +27,12 @@ const InjectionsList: React.FC = () => {
         }}
       >
         <Typography variant="h5">Injections List</Typography>
-        <Button variant="outlined">+ Create Injection</Button>
+        <Button
+          variant="outlined"
+          onClick={() => navigate('/create-injection')}
+        >
+          + Create Injection
+        </Button>
       </Box>
       <Box>
         <Box

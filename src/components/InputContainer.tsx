@@ -7,7 +7,7 @@ interface InputContainerProps {
 
 const InputContainer: React.FC<InputContainerProps> = ({ children }) => {
   return (
-    <Container sx={{ bgcolor: '#FFE4E1', my: 10, height: 300 }} maxWidth="sm">
+    <Container sx={{ bgcolor: '#FFE4E1', my: 10, height: 400 }} maxWidth="sm">
       <Box
         sx={{
           display: 'flex',
