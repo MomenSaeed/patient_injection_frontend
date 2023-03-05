@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# Patient Injection Front-End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Front-End Implementation For [Patient Injection API](https://github.com/MomenSaeed/patient_injection)
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+The Front is built using
 
-### `npm start`
+- [React](https://reactjs.org/).
+- [Type Script](https://www.typescriptlang.org/).
+- [React Router](https://reactrouter.com/en/main/components/routes).
+- [Matrial UI](https://mui.com/material-ui/getting-started/overview/).
+- [ReactQuery](https://tanstack.com/query/v4/docs/react/overview) for api requests with [graphql client](https://github.com/graphql/graphql-js).
+- [React Charts](https://react-charts.tanstack.com/) for adherence graph charts.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Prerequisites
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Setup [Docker](https://www.docker.com/).
+- [Backend](https://github.com/MomenSaeed/patient_injection) up and running on [localhost:3000](http://localhost:3000/)
 
-### `npm test`
+### Installing
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+runing docker-compose is enough:
 
-### `npm run build`
+```bash
+$ docker-compose up
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+When containers are up and running you can access the front through [localhost:3001](http://localhost:3001).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To access react container you can run:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+$ docker exec -it patient-injection-front-end bash
+```
 
-### `npm run eject`
+## Api Documentation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To clarify project endpoints requests details.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Published [Postman](https://documenter.getpostman.com/view/15636958/2s93CSpr19).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Code Linting
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+using eslint
 
-## Learn More
+```bash
+$ docker exec -it patient-injection-front-end npm run lint
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Code Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [App.tsx](https://github.com/MomenSaeed/patient_injection_frontend/blob/main/src/App.tsx) the root component to set the project setup and structure.
+- [Routes.tsx](https://github.com/MomenSaeed/patient_injection_frontend/blob/main/src/Routes.tsx) to list the project routes.
+- [Pages/](https://github.com/MomenSaeed/patient_injection_frontend/tree/main/src/pages) project pages components which the route starts from.
+- [api/](https://github.com/MomenSaeed/patient_injection_frontend/tree/main/src/api) containes the Api requests by react-query and the request types.
+- [components/](https://github.com/MomenSaeed/patient_injection_frontend/tree/main/src/components) containes shared components through different pages.
+- [PatientContext.tsx](https://github.com/MomenSaeed/patient_injection_frontend/blob/main/src/context/Patient.tsx) which handle the current patient session.

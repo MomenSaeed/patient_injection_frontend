@@ -5,7 +5,7 @@ import {
   queryCurrentPatient,
 } from '../api/patients/currentPatient'
 import { Patient } from '../api/patients/types'
-import { setClientApiKey } from '../core/requestClient'
+import { setClientApiKey } from '../utils/requestClient'
 import { useLocalStorage } from '../utils/useLocalStorage'
 
 export interface PatientContextType {

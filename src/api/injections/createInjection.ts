@@ -4,7 +4,7 @@ import {
   UseMutationOptions,
   MutationKey,
 } from '@tanstack/react-query'
-import { graphqlRequestClient } from '../../core/requestClient'
+import { graphqlRequestClient } from '../../utils/requestClient'
 import { Injection } from './types'
 
 export interface CreateInjectionInput {

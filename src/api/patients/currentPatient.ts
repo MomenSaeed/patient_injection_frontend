@@ -3,7 +3,7 @@ import {
   UseQueryResult,
   UseQueryOptions,
 } from '@tanstack/react-query'
-import { graphqlRequestClient } from '../../core/requestClient'
+import { graphqlRequestClient } from '../../utils/requestClient'
 import { Patient } from './types'
 
 export interface CurrentPatientResult {
