@@ -56,3 +56,4 @@ $ docker exec -it patient-injection-front-end npm run lint
 - [api/](https://github.com/MomenSaeed/patient_injection_frontend/tree/main/src/api) containes the Api requests by react-query and the request types.
 - [components/](https://github.com/MomenSaeed/patient_injection_frontend/tree/main/src/components) containes shared components through different pages.
 - [PatientContext.tsx](https://github.com/MomenSaeed/patient_injection_frontend/blob/main/src/context/Patient.tsx) which handle the current patient session.
+- [utils/](https://github.com/MomenSaeed/patient_injection_frontend/tree/main/src/utils) which have projects utils and support like [useLocalStorage](https://github.com/MomenSaeed/patient_injection_frontend/blob/main/src/utils/useLocalStorage.tsx) custom hook and graphql [request client](https://github.com/MomenSaeed/patient_injection_frontend/blob/main/src/utils/requestClient.ts)
